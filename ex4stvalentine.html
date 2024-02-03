@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<!-- Student: Laura Jaimes -->
+			<!-- Ex. 4 - Display a web map with topic St Valentine -->
+			<!-- taken from https://developers.arcgis.com/javascript/latest/#tutorials -->
+				<!-- taken from https://developers.arcgis.com/javascript/latest/tutorials/display-a-web-map/ -->
+			<meta charset="utf-8">
+			<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+			<title>ArcGIS Maps SDK for JavaScript Tutorials: Display a Web Map</title>
+				<style>
+				  /* CSS resets any browser settings so viewDiv element can consume the full width and height of the browser */
+				  html,
+				  body,
+				  #viewDiv {
+					padding: 0;
+					margin: 0;
+					height: 100%;
+					width: 100%;
+				  }
+				</style>
+				
+				<!-- link the css stylesheet file and js library for the map, it is not mine -->
+				<link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+				<script src="https://js.arcgis.com/4.28/"></script>
+
+				<!-- load the Map module. More modules in: https://developers.arcgis.com/javascript/latest/tooling-intro/ -->
+				<!-- After load the module, create a funtion where the module is a parameter -->
+				<!-- note: keep the module references and callback parameters in the same order -->
+				<script>
+					require(["esri/config", "esri/Map", "esri/WebMap", "esri/views/MapView", "esri/widgets/ScaleBar", "esri/widgets/Legend"
+							], function(esriConfig, WebMap, MapView, ScaleBar, Legend) {
+							
+						<!-- parameter esriConfig for the API Key: https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#apiKey -->
+						esriConfig.apiKey = "AAPK8ee79f54a339494c8931908c7f2458bduDivabZwQBmDJf0JrwugKmlUUx7IEjM8aHkYlgZehUfqU01lmNcNhD9maWndFU1W";
+						
+						<!-- const map include the parameter for basemap: https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-layers/ -->
+						const basemap = new Basemap({
+							baseLayers: [
+								new VectorTileLayer({
+									portalItem: {
+										id: "36551d7048d643618026014f3075327b", // Community basemap style
+									},
+								}),
+							],
+						});
+
+						const map = new Map({
+						  basemap: basemap,
+						});
+						
+						const view = new MapView({
+						  container: "viewDiv",
+						  map: map,
+						  center: [-30, 20],
+						  zoom: 1,
+						  constraints: {
+							snapToZoom: false,
+						  },
+						});
+
+						const basemaps = new BasemapGallery({
+						  view: view,
+						  source: {
+							query: `id: a25523e2241d4ff2bcc9182cc971c156`, // World basemaps for developers in this group in ArcGIS Online - https://www.arcgis.com/home/group.html?id=a25523e2241d4ff2bcc9182cc971c156
+						  },
+						});
+						const expand = new Expand({
+							  view: view,
+							  content: basemaps,
+							  expanded: true,
+						});
+
+						view.ui.add(expand, {
+						  position: "top-right",
+						});
+					  });
+				</script>
+				
+		</head>
+		
+		<body>
+		  <div id="viewDiv"></div>
+		</body>
+		
+	</html>
+
+						
+				</script>
+
+				<!-- more in  -->
+				<!-- https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/graphics/ -->
+				<!-- https://developers.arcgis.com/documentation/mapping-apis-and-services/visualization/ -->   
+		</head>
+		  
+		<body>
+			<!-- viewDiv is the element displays the map -->
+			<div id="viewDiv"></div>
+		</body>
+	</html>
