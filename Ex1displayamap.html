@@ -1,55 +1,57 @@
-<html>
-  <head>
-    <!-- Student: Laura Jaimes -->
-    <!-- Ex. 1 - Display a map of Santa Monica Mountains in California -->
-    <!-- taken from https://developers.arcgis.com/javascript/latest/get-started/ -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a map</title>
+<!DOCTYPE html>
+	<html lang="en">
+	  <head>
+		<!-- Student: Laura Jaimes -->
+		<!-- Ex. 1 - Display a map of Santa Monica Mountains in California -->
+		<!-- taken from https://developers.arcgis.com/javascript/latest/get-started/ -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<title>ArcGIS Maps SDK for JavaScript Tutorials: Display a map</title>
 
-    <style>
-      <!-- CSS resets any browser settings so viewDiv element can consume the full width and height of the browser -->
-      html,
-      body,
-      #viewDiv {
-        padding: 0;
-        margin: 0;
-        height: 100%;
-        width: 100%;
-      }
-    </style>
-    <!-- link the css stylesheet file and js library for the map, it is not mine -->
-    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
-    <script src="https://js.arcgis.com/4.28/"></script>
+		<style>
+		  /* CSS resets any browser settings so viewDiv element can consume the full width and height of the browser */
+		  html,
+		  body,
+		  #viewDiv {
+			padding: 0;
+			margin: 0;
+			height: 100%;
+			width: 100%;
+		  }
+		</style>
+		<!-- link the css stylesheet file and js library for the map, it is not mine -->
+		<link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+		<script src="https://js.arcgis.com/4.28/"></script>
 
-    <!-- load the Map module. More modules in: https://developers.arcgis.com/javascript/latest/tooling-intro/ -->
-    <!-- After load the module, create a funtion where the module is a parameter -->
-    <!-- note: keep the module references and callback parameters in the same order -->
-    <script>
-      require(["esri/config", "esri/Map", "esri/views/MapView"], function(esriConfig, Map, MapView) {
-        <!-- parameter esriConfig for the API Key: https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#apiKey -->
-        esriConfig.apiKey = "AAPK8ee79f54a339494c8931908c7f2458bduDivabZwQBmDJf0JrwugKmlUUx7IEjM8aHkYlgZehUfqU01lmNcNhD9maWndFU1W";
-        <!-- const map include the parameter for basemap: https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-layers/ -->
-        const map = new Map({
-          basemap: "arcgis/topographic" // basemap styles service
-        });
-        <!-- MapView class to set the location of the map to display: https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html -->
-        const view = new MapView({
-        map: map, // References a Map instance
-        center: [-118.805, 34.027], // Longitude, latitude - Sets the center point of the view at a specified lon/lat
-        zoom: 13, // Zoom level - MapView converts this to its corresponding scale
-        container: "viewDiv" // Div element - References the ID of a DOM element
-        });
-      });
-    </script>
+		<!-- load the Map module. More modules in: https://developers.arcgis.com/javascript/latest/tooling-intro/ -->
+		<!-- After load the module, create a funtion where the module is a parameter -->
+		<!-- note: keep the module references and callback parameters in the same order -->
+		<script>
+		  require(["esri/config", "esri/Map", "esri/views/MapView"], function(esriConfig, Map, MapView) {
+			<!-- parameter esriConfig for the API Key: https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#apiKey -->
+			// esriConfig.apiKey = "AAPK8ee79f54a339494c8931908c7f2458bduDivabZwQBmDJf0JrwugKmlUUx7IEjM8aHkYlgZehUfqU01lmNcNhD9maWndFU1W";
+			esriConfig.apiKey = "fs2Vok3bQWGk1-3bc-HwIVzHenyDdFc3cH-US53Fl2zTVdHleYRxr1kemvuBzf_hRS1SoNeCiOx9jcHPCC0oPjVLNmPNWT4RV3uPWSCRWPtCuPs6TeCnFgvw0oaKx-3HtEJbWbGoHkXAKr_V1tw1uQ.."
+			<!-- const map include the parameter for basemap: https://developers.arcgis.com/documentation/mapping-apis-and-services/maps/basemap-layers/ -->
+			const map = new Map({
+			  basemap: "arcgis/topographic" // basemap styles service
+			});
+			<!-- MapView class to set the location of the map to display: https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html -->
+			const view = new MapView({
+			map: map, // References a Map instance
+			center: [-118.805, 34.027], // Longitude, latitude - Sets the center point of the view at a specified lon/lat
+			zoom: 13, // Zoom level - MapView converts this to its corresponding scale
+			container: "viewDiv" // Div element - References the ID of a DOM element
+			});
+		  });
+		</script>
 
-    <!-- more parameters in  -->
-    <!-- https://developers.arcgis.com/javascript/latest/tooling-intro/ -->
-    <!-- https://developers.arcgis.com/javascript/latest/api-reference/ -->   
-  </head>
-  
-  <body>
-    <!-- viewDiv is the element displays the map -->
-    <div id="viewDiv"></div>
-  </body>
-</html>
+	<!-- more parameters in  -->
+	<!-- https://developers.arcgis.com/javascript/latest/tooling-intro/ -->
+	<!-- https://developers.arcgis.com/javascript/latest/api-reference/ -->   
+	  </head>
+	  
+	  <body>
+		<!-- viewDiv is the element displays the map -->
+		<div id="viewDiv"></div>
+	  </body>
+	</html>
