@@ -26,14 +26,15 @@
 
 				<script>
 					require(["esri/config", "esri/Map", "esri/WebMap", "esri/views/MapView", "esri/widgets/ScaleBar", "esri/widgets/Legend"
-							], function(esriConfig, WebMap, MapView, ScaleBar, Legend) {
+							], function(esriConfig, Map, WebMap, MapView, ScaleBar, Legend) {
 							
 						<!-- parameter esriConfig for the API Key: https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#apiKey -->
 						esriConfig.apiKey = "AAPK8ee79f54a339494c8931908c7f2458bduDivabZwQBmDJf0JrwugKmlUUx7IEjM8aHkYlgZehUfqU01lmNcNhD9maWndFU1W";
 						
 						const webmap = new WebMap({
 							portalItem: {
-								id: "814aa1ed841b46aca482f4cf78281ac9"
+								// id: "814aa1ed841b46aca482f4cf78281ac9"
+								id: "628919e581fe4002bcd9eb63d73e7468"
 							}
 						});
 
@@ -42,16 +43,18 @@
 							map: webmap
 						});
 						
-						const scalebar = new ScaleBar({
-							view: view
-						});
-						view.ui.add(scalebar, "bottom-left");
-						
-						const legend = new Legend ({
-							view: view
-						});
-						view.ui.add(legend, "top-right");
-					});						
+						view.when(function() {
+							const scalebar = new ScaleBar({
+								view: view
+							});
+							view.ui.add(scalebar, "bottom-left");
+							
+							const legend = new Legend ({
+								view: view
+							});
+							view.ui.add(legend, "top-right");
+						});	
+					});					
 
 				</script>
 				
