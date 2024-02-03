@@ -41,6 +41,7 @@
 					zoom: 13, // Zoom level - MapView converts this to its corresponding scale
 					container: "viewDiv" // Div element - References the ID of a DOM element
 			});
+			<!-- point -->
 			const graphicsLayer = new GraphicsLayer();
 				map.add(graphicsLayer);
 			const point = { //Create a point
@@ -61,6 +62,29 @@
 				symbol: simpleMarkerSymbol
 			});
 			graphicsLayer.add(pointGraphic);
+			<!-- Line -->
+			const polyline = {
+				type: "polyline",
+				paths: [
+					[-118.821527826096, 34.0139576938577], //Longitude, latitude
+					[-118.814893761649, 34.0080602407843], //Longitude, latitude
+					[-118.808878330345, 34.0016642996246]  //Longitude, latitude
+				]
+			 };
+			const simpleLineSymbol = {
+				type: "simple-line",
+				color: [226, 119, 40], // Orange
+				width: 2
+			};
+			const polylineGraphic = new Graphic({
+				geometry: polyline,
+				symbol: simpleLineSymbol
+			});
+			graphicsLayer.add(polylineGraphic);
+
+			<!-- polygon -->
+			
+			
 		});
 		</script>
 
