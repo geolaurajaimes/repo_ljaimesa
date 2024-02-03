@@ -79,9 +79,11 @@
 			const polylineGraphic = new Graphic({
 				geometry: polyline,
 				symbol: simpleLineSymbol
+				attributes: attributes,
+				popupTemplate: popupTemplate
 			});
 			graphicsLayer.add(polylineGraphic);
-			<!-- polygon -->
+			<!-- polygon: Define the polygon and simpleFillSymbol that will be used to create a Graphic -->
 			const polygon = {
 				type: "polygon",
 				rings: [
@@ -100,6 +102,16 @@
 					width: 1
 				}
 			};
+			<!-- pop up -->
+			const popupTemplate = {
+				title: "{Name}",
+				content: "{Description}"
+			}
+			const attributes = {
+				Name: "Graphic",
+				Description: "I am a polygon"
+			}
+			<!-- Create a Graphic and set the geometry and symbol properties -->
 			const polygonGraphic = new Graphic({
 				geometry: polygon,
 				symbol: simpleFillSymbol,
