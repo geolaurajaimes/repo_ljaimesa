@@ -9,3 +9,4 @@ https://geolaurajaimes.github.io/repo_ljaimesa/ex2displaytrack.html
 https://geolaurajaimes.github.io/repo_ljaimesa/ex3displayplpg.html
 ## WebMap St Valentine
 https://geolaurajaimes.github.io/repo_ljaimesa/ex4stvalentine.html
+https://geolaurajaimes.github.io/repo_ljaimesa/ex4stvalentine2.html
