@@ -42,17 +42,17 @@
 							map: webmap
 						});
 						
-						view.when(function() {
-							const scalebar = new ScaleBar({
-								view: view
-							});
-							view.ui.add(scalebar, "bottom-left");
+						
+						const scalebar = new ScaleBar({
+							view: view
+						});
+						view.ui.add(scalebar, "bottom-left");
+						
+						const legend = new Legend ({
+							view: view
+						});
+						view.ui.add(legend, "top-right");
 							
-							const legend = new Legend ({
-								view: view
-							});
-							view.ui.add(legend, "top-right");
-						});	
 					});					
 
 				</script>
