@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<!-- Student: Laura Jaimes -->
+			<!-- Ex. 4 - Display a web map with topic St Valentine -->
+			<!-- taken from https://developers.arcgis.com/javascript/latest/#tutorials -->
+				<!-- taken from https://developers.arcgis.com/javascript/latest/tutorials/display-a-web-map/ -->
+			<meta charset="utf-8">
+			<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+			<title>ArcGIS Maps SDK for JavaScript Tutorials: Display a Web Map</title>
+				<style>
+				  /* CSS resets any browser settings so viewDiv element can consume the full width and height of the browser */
+				  html,
+				  body,
+				  #viewDiv {
+					padding: 0;
+					margin: 0;
+					height: 100%;
+					width: 100%;
+				  }
+				</style>
+				
+				<!-- link the css stylesheet file and js library for the map, it is not mine -->
+				<link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+				<script src="https://js.arcgis.com/4.28/"></script>
+
+				<script>
+					require(["esri/config", "esri/Map", "esri/WebMap", "esri/views/MapView", "esri/widgets/ScaleBar", "esri/widgets/Legend"
+							], function(esriConfig, WebMap, MapView, ScaleBar, Legend) {
+						
+					esriConfig.apiKey = "AAPK8ee79f54a339494c8931908c7f2458bduDivabZwQBmDJf0JrwugKmlUUx7IEjM8aHkYlgZehUfqU01lmNcNhD9maWndFU1W";
+							
+						const webmap = new WebMap({
+							portalItem: {
+								// id: "628919e581fe4002bcd9eb63d73e7468"
+								id: "41281c51f9de45edaf1c8ed44bb10e30"
+							}
+						});
+						
+						const view = new MapView({
+							container: "viewDiv",
+
+							map: map,
+							zoom: 0,
+
+							map: webmap
+
+						  });
+						
+				</script>
+				
+		</head>
+			  
+		<body>
+			<!-- viewDiv is the element displays the map -->
+			<div id="viewDiv"></div>
+		</body>
+	</html>
