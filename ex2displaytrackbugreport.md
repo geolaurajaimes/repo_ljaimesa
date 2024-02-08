@@ -34,7 +34,7 @@ The website is not displaying the basemap, and the console shows multiple errors
 - The ArcGIS Maps SDK for JavaScript version 4.27 is mentioned as the replacement for the deprecated property.
 
 ### Screenshots
-![BugEx2](img/BugEx2.png)
+![BugEx3](img/BugEx3.png)
 
 ### Environment
 - Browser: Google Chrome and Bing
