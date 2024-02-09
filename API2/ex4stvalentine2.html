@@ -7,7 +7,7 @@
     <!-- taken from https://developers.arcgis.com/javascript/latest/#tutorials -->
     <!-- taken from https://developers.arcgis.com/javascript/latest/tutorials/display-a-web-map/ -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>ArcGIS Maps SDK for JavaScript Tutorials: Display a Web Map</title>
     <style>
         /* CSS resets any browser settings so viewDiv element can consume the full width and height of the browser */
@@ -17,25 +17,13 @@
             margin: 0;
             height: 100%;
             width: 100%;
-            font-family: Arial, sans-serif;
+            font-family: 'Century Gothic', sans-serif; /* Cambio de fuente */
+            background-color: #FCEFF5; /* Cambio de color de fondo a rosa claro */
         }
 
-        #mapContainer {
-            width: 80%;
-            height: 80%;
-            margin: auto;
-        }
-
-        #mapTitle {
-            text-align: center;
-            font-size: 24px;
-            margin-top: 20px;
-        }
-
-        #mapDescription {
-            text-align: center;
-            font-size: 16px;
-            margin-top: 10px;
+        #viewDiv {
+            height: 80%; /* Cambio de altura del viewDiv */
+            width: 100%;
         }
     </style>
     <!-- link the css stylesheet file and js library for the map, it is not mine -->
@@ -55,10 +43,11 @@
             });
 
             const view = new MapView({
-                container: "mapContainer",
+                container: "viewDiv",
                 map: webmap,
                 zoom: 2 // Zoom level set to 2
             });
+
 
             const scalebar = new ScaleBar({
                 view: view
@@ -66,7 +55,8 @@
             view.ui.add(scalebar, "bottom-left");
 
             const legend = new Legend({
-                view: view
+                view: view,
+                title: "San Valentín" // Cambio de título de la leyenda
             });
             view.ui.add(legend, "bottom-right"); // Change position to bottom-right
 
@@ -77,9 +67,10 @@
 
 <body>
     <!-- viewDiv is the element displays the map -->
-    <div id="mapContainer"></div>
-    <div id="mapTitle">Countries that celebrate, partially celebrate or do not celebrate Valentine's Day in the world</div>
-    <div id="mapDescription">The information contained in this map was consulted in only one bibliographic source, its veracity is not known. The objective of this map is to generate an item id in arcgis online to include it in a web map made for the Geom99 - Web Development course.</div>
+    <div id="viewDiv"></div>
+    <!-- Titulo y descripcion -->
+    <h1 style="text-align: center;">Countries that celebrate, partially celebrate or do not celebrate Valentine's Day in the world</h1>
+    <p style="text-align: center;">The information contained in this map was consulted in only one bibliographic source, its veracity is not known. The objective of this map is to generate an item id in arcgis online to include it in a web map made for the Geom99 - Web Development course.</p>
 </body>
 
 </html>
