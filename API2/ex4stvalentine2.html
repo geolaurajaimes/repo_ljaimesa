@@ -17,12 +17,12 @@
             margin: 0;
             height: 100%;
             width: 100%;
-            font-family: 'Century Gothic', sans-serif; /* Cambio de fuente */
-            background-color: #FCEFF5; /* Cambio de color de fondo a rosa claro */
+            font-family: 'Century Gothic';
+            background-color: #FCEFF5;
         }
 
         #viewDiv {
-            height: 80%; /* Cambio de altura del viewDiv */
+            height: 80%;
             width: 100%;
         }
     </style>
@@ -56,9 +56,9 @@
 
             const legend = new Legend({
                 view: view,
-                title: "San Valentín" // Cambio de título de la leyenda
+                title: "San Valentín" // CHANGE LEGEND TITLE NO WORKS
             });
-            view.ui.add(legend, "bottom-right"); // Change position to bottom-right
+            view.ui.add(legend, "bottom-right");
 
         });
 
@@ -71,6 +71,7 @@
     <!-- Titulo y descripcion -->
     <h1 style="text-align: center;">Countries that celebrate, partially celebrate or do not celebrate Valentine's Day in the world</h1>
     <p style="text-align: center;">The information contained in this map was consulted in only one bibliographic source, its veracity is not known. The objective of this map is to generate an item id in arcgis online to include it in a web map made for the Geom99 - Web Development course.</p>
+    
 </body>
 
 </html>
